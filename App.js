@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {View } from 'react-native';
-import { List2 } from './Components/List/List2';
+import {View, Text } from 'react-native';
+import { Sani } from './screens/Sani';
 export default function App() {
   return (
     <View>
-      <List2/>
+      <Sani/>
       <StatusBar style="auto" />
     </View>
   );
