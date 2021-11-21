@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
   headerTitle: {
     color: Platform.OS === 'android' ? 'black' : colors.primary,
     fontSize: 22,
-    fontFamily: "GothamBold",
   }
 });
 

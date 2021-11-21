@@ -5,7 +5,7 @@ import Spinner from "../Stateless/Spinner/Spinner";
 //import { useParams } from "react-router";
 import { GeneralContext } from "../../../context/GeneralContext";
 import { getFirestore } from "../../../Services/getFirestore";
-export const OdontList = () => {
+export const OdontList = ({navigation}) => {
     const [result,setResult] = useState(null);
     const {setLoading,loading,search,setSearch} = useContext(GeneralContext)
 
@@ -39,6 +39,12 @@ export const OdontList = () => {
         }
     },[result]);
     
+    const handleSelectOdont = (item) => {
+        navigation.navigate('Detail', {
+          odont: item,
+        });
+      };
+
     // aca estoy filtrando los productos
     
     const filter = result && result.filter((p) => p.nombre.toLowerCase().includes(search.toLowerCase()));
@@ -51,6 +57,9 @@ export const OdontList = () => {
                 (
                     <Item 
                         {...item}
+                        key={item.id}
+                        func={handleSelectOdont(item)}
+
                     />
                 )))}
         </View>
